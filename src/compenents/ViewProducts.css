@@ -1,16 +1,25 @@
 @font-face {
-    font-family: 'HeaderFont';
+    font-family: 'HFont';
     src: url("C:\\Users\\User\\Downloads\\delighted-beauty\\DelightedBDemoRegular.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-
-img{
-    width: 500px;
-    height: 500px;
-    position: fixed;
-    z-index: 2;
-    top: 450px;
-    left: 300px;
-}
+.product-type-selector {
+    margin-bottom: 20px;
+  }
+  
+  .radio-group {
+    margin-bottom: 15px;
+  }
+  
+  .radio-group label {
+    display: block; /* מציג את כל הלייבלים בשורה נפרדת */
+    margin: 5px 0;
+  }
+  
+  .radio-group p {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  

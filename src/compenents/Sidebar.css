@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 15px 20px;
     text-align: left; 
     background-color: #49326b;
     color: #ffffff;
@@ -25,12 +25,12 @@
     margin-bottom: 15px;
     font-size: 1.1em;
   }
- li.expandable-item > ul {
+ li.expandable-item > ul >li{
     display: none; 
     margin-top: 10px;
 }
 
-.sidebar li.expandable-item:hover > ul {
+.sidebar li.expandable-item:hover > ul >li{
     display: block; 
     color:#b27409;
 }
@@ -58,4 +58,25 @@
   a {
     text-decoration: none;
 }
+
+.custom-link {
+  color: #2c2d2d;
+}
+
+.custom-link:hover {
+  color: #b27409;}
+
+  .main-link {
+    color: #ffffff;
+  }
+  
+  .main-link:hover {
+    color: #b27409;}
+
+    .kind-link {
+      color: #b27409;;
+    }
+    
+    .kind-link:hover {
+      color: #2c2d2d;}
   

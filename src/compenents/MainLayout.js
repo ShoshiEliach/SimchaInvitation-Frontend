@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import React from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Products from './Products';
-import Search from './Search';
-import ViewProducts from './ViewProducts';
+import { Outlet } from 'react-router-dom';
 
-export default function MainLayout({ handleOver, handleOut, handleClick, visibleSidebar }) {
+export default function MainLayout({ handleOver, handleClick }) {
   return (
-    <div>
+    <>
       <Header handleOver={handleOver} handleClick={handleClick} />
-      {visibleSidebar && <Sidebar handleOver={handleOver} handleOut={handleOut} />}
-      <div>
-      <Outlet /> 
-    <Search />
-         <Products />
-        
-      </div>
-      </div>
+      <Outlet /> {/* כאן יוחלף התוכן הדינמי לפי הנתיב */}
+    </>
   );
-};
+}

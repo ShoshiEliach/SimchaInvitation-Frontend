@@ -1,48 +1,53 @@
-
 import React, { useState } from 'react';
-
-import Header from './compenents/Header';
-import Sidebar from './compenents/Sidebar';
-import Product from './compenents/Product';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainLayout from './compenents/MainLayout';
+import ViewProducts from './compenents/ViewProducts';
 import Products from './compenents/Products';
 import Search from './compenents/Search';
-import ViewProducts from './compenents/ViewProducts';
-import LoginForm from './compenents/LoginForm';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainLayout from './compenents/MainLayout';
-import { HeaderProvider } from './compenents/HeaderContext';
+import Sidebar from './compenents/Sidebar';
 
 function App() {
   const [visibleSidebar, setVisibleSidebar] = useState(false);
 
-  const handleOver = () => {
-    setVisibleSidebar(true);
-  };
+  const handleOver = () => setVisibleSidebar(true);
+  const handleOut = () => setVisibleSidebar(false);
+  const handleClick = () => setVisibleSidebar(!visibleSidebar);
 
-  const handleOut = () => {
-    setVisibleSidebar(false);
-  };
+  const products = [
+    { id: 'product1', name: 'מוצר 1', category: 'קטגוריה 1', price: '$12.99', imageUrl: 'https://via.placeholder.com/150' },
+    { id: 'product2', name: 'מוצר 2', category: 'קטגוריה 2', price: '$10.99', imageUrl: 'https://via.placeholder.com/150' },
+    // שאר המוצרים...
+  ];
 
-  const handleClick = () => {
-    setVisibleSidebar(!visibleSidebar);
-  };
   return (
-    <>
-      <Header handleOver={handleOver} handleClick={handleClick} />
-      {visibleSidebar && <Sidebar handleOver={handleOver} handleOut={handleOut} />}
-        <Routes>
-          <Route path='/' element=
-          { <MainLayout handleOver={handleOver} 
-            handleOut={handleOut} 
-            handleClick={handleClick} 
-            visibleSidebar={visibleSidebar} />
-         }/>
-          
-          <Route path="/ViewProducts" element={<ViewProducts/>}/>
-        </Routes>
-        </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <MainLayout
+            handleOver={handleOver}
+            handleClick={handleClick}
+          />
+        }
+      >
+        {/* דף הבית: "/" */}
+        <Route
+          index
+          element={
+            <>
+              {visibleSidebar && <Sidebar handleOut={handleOut} />}
+
+              <Search />
+              <Products products={products} />
+            </>
+          }
+        />
+
+        {/* דף ViewProducts */}
+        <Route path="ViewProducts" element={<ViewProducts />} />
+      </Route>
+    </Routes>
   );
-};
+}
 
 export default App;
