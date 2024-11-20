@@ -1,0 +1,71 @@
+.navbar {
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  margin-right: 20px;
+  color: #333;
+  font-size: 16px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+/* עיצוב כפתור ה-toggle */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: 200px;
+  margin-right: 10px;
+  /* רווח בין ה-input לבין הכפתור */
+}
+
+.btn {
+  padding: 6px 12px;
+  /* גודל מתאים לכפתור */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  /* עדיפות מעל כל האלמנטים */
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  width: auto;
+  min-width: 200px;
+  padding: 0.5rem 0;
+}
+
+/* אפקט ריחוף לפריטים */
+.dropdown-menu .dropdown-item:hover {
+  /* background-color: #f8f9fa; */
+  /* רקע בהיר בעת ריחוף */
+  color: #007bff;
+  /* טקסט כחול */
+}
