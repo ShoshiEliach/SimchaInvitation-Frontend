@@ -1,82 +1,91 @@
 .sidebar {
-    position: fixed;
-    top:110px;
-    margin-top: 0;
-    width: 180px; 
-    height:600px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px 20px;
-    text-align: left; 
-    background-color: #49326b;
-    color: #ffffff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-
- 
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-  }
- li.expandable-item > ul >li{
-    display: none; 
-    margin-top: 10px;
+  position: fixed;
+  top: 110px;
+  /* מיקום מגובה הדף */
+  left: 0;
+  /* מיקום בצד שמאל */
+  margin-top: 0;
+  width: 180px;
+  /* רוחב */
+  height: 630px;
+  /* גובה */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 20px;
+  text-align: left;
+  /* יישור טקסט לשמאל */
+  background-color: #49326b;
+  /* צבע רקע */
+  color: #ffffff;
+  /* צבע טקסט */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.sidebar li.expandable-item:hover > ul >li{
-    display: block; 
-    color:#b27409;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-  
-  .sidebar .highlight-text {
-    color: #b27409;
-  }
-  
-  .arrow-btn {
-    margin-top: auto;
-    margin-bottom: 65%;
-    display: block;
-    width: 120px;
-    height: 50px;
-    /* margin: 20px auto 0; */
-    border: 5px solid #b27409;
-    border-radius: 30px;
-    color: #b27409;
-    text-align: center;
-    /* line-height: 46px; */
-    font-size: 2.5em;
-  }
+.sidebar li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
 
-  a {
-    text-decoration: none;
+li.expandable-item>ul>li {
+  display: none;
+  margin-top: 10px;
+}
+
+.sidebar li.expandable-item:hover>ul>li {
+  display: block;
+  color: #b27409;
+}
+
+.sidebar .highlight-text {
+  color: #b27409;
+}
+
+.arrow-btn {
+  margin-top: auto;
+  margin-bottom: 65%;
+  display: block;
+  width: 120px;
+  height: 50px;
+  border: 5px solid #b27409;
+  border-radius: 30px;
+  color: #b27409;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+a {
+  text-decoration: none;
 }
 
 .custom-link {
+  text-decoration: none;
   color: #2c2d2d;
 }
 
 .custom-link:hover {
-  color: #b27409;}
+  color: #b27409;
+}
 
-  .main-link {
-    color: #ffffff;
-  }
-  
-  .main-link:hover {
-    color: #b27409;}
+.main-link {
+  text-decoration: none;
+  color: #ffffff;
+}
 
-    .kind-link {
-      color: #b27409;;
-    }
-    
-    .kind-link:hover {
-      color: #2c2d2d;}
-  
+.main-link:hover {
+  color: #b27409;
+}
+
+.kind-link {
+  text-decoration: none;
+  color: #b27409;
+}
+
+.kind-link:hover {
+  color: #2c2d2d;
+}

@@ -2,66 +2,56 @@ import React, { useState } from 'react';
 import './TabFilter.css';
 
 const TabFilter = () => {
-  const [activeTab, setActiveTab] = useState('cakes');
+  const [activeTab, setActiveTab] = useState('video'); // מצב התחלתי של טאב
 
   const handleTabClick = (tab) => {
-    setActiveTab(tab);
+    setActiveTab(tab); // עדכון מצב הטאב הפעיל
   };
 
   return (
     <div className="tabs-container">
       <div className="tabs">
         <div
-          className={`tab-item ${activeTab === 'cakes' ? 'active' : ''}`}
-          onClick={() => handleTabClick('cakes')}
+          className={`tab-item ${activeTab === 'video' ? 'active' : ''}`}
+          onClick={() => handleTabClick('video')}
         >
-          <img 
+          <img
             src="/movie_100dp_49326B.png"
-            alt="עוגות" 
+            alt="Video"
             className="tab-icon-img"
           />
           <span>Video</span>
         </div>
         <div
-          className={`tab-item ${activeTab === 'cakes' ? 'active' : ''}`}
-          onClick={() => handleTabClick('cakes')}
+          className={`tab-item ${activeTab === 'invitation' ? 'active' : ''}`}
+          onClick={() => handleTabClick('invitation')}
         >
-          <img 
-            src="/movie_100dp_49326B.png"
-            alt="עוגות" 
+          <img
+            src="/invitation.png"
+            alt="Invitation"
             className="tab-icon-img"
           />
           <span>Invitation</span>
         </div>
         <div
-          className={`tab-item ${activeTab === 'party' ? 'active' : ''}`}
-          onClick={() => handleTabClick('party')}
+          className={`tab-item ${activeTab === 'poster' ? 'active' : ''}`}
+          onClick={() => handleTabClick('poster')}
         >
-          <img 
-            src="/movie_100dp_49326B.png"
-            alt="Voice" 
+          <img
+            src="./poster.png"
+            alt="Poster"
             className="tab-icon-img"
           />
-          <span>צד</span>
+          <span>Poster</span>
         </div>
-        <div
-          className={`tab-item ${activeTab === 'park' ? 'active' : ''}`}
-          onClick={() => handleTabClick('park')}
-        >
-          <img 
-            src="/movie_100dp_49326B.png"
-            alt="Poster" 
-            className="tab-icon-img"
-          />
-          <span>פארק</span>
-        </div>
+
       </div>
 
-      
+      {/* תוכן דינמי לפי הטאב הפעיל */}
       <div className="tab-content">
-        {activeTab === 'cakes' && <div>תוכן עבור עוגות</div>}
-        {activeTab === 'party' && <div>תוכן עבור צד</div>}
-        {activeTab === 'park' && <div>תוכן עבור פארק</div>}
+        {activeTab === 'video' && <p>Video content here...</p>}
+        {activeTab === 'invitation' && <p>Invitation content here...</p>}
+        {activeTab === 'poster' && <p>Poster content here...</p>}
       </div>
     </div>
   );

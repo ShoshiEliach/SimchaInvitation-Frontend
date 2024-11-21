@@ -1,71 +1,83 @@
 .navbar {
-  padding: 10px 20px;
-  background-color: #f8f9fa;
+  padding: 5px 20px;
+  background-color: #b39869 !important;
   position: relative;
   overflow: visible;
+  /* מאפשר לתפריט להופיע מחוץ ל-navbar */
   z-index: 1;
-}
+  direction: ltr;
 
-.navbar-collapse {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
+  margin-left: 380px;
 }
 
 .navbar-nav .nav-link {
-  margin-right: 20px;
+  margin-right: 40px;
   color: #333;
   font-size: 16px;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #007bff;
+  color: #b27409;
 }
 
-/* עיצוב כפתור ה-toggle */
+.dropdown-menu {
+  position: absolute;
+  /* נפתח מחוץ ל-navbar */
+  top: 100%;
+  /* מתחת לכפתור */
+  left: 0;
+  z-index: 9999;
+  background-color: #2c2d2d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  /* הצללה */
+  min-width: 120px;
+  /* גודל מינימלי */
+  margin-top: 0;
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #b27409;
+  /* צבע הטקסט */
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+  color: #49326b;
+  background-color: transparent;
+  /* טקסט כחול */
+}
+
 .navbar-toggler {
   border: none;
   outline: none;
 }
 
-.form-inline {
-  display: flex;
-  align-items: center;
+
+
+/* התאמה אישית של תיבת החיפוש */
+.mr-sm-2 {
+
+  width: 150px;
+  border-color: #b39869;
+  /* צבע הגבול */
+  background-color: #f4f4f4;
+  /* צבע רקע */
+  color: #333;
+  /* צבע טקסט */
 }
 
-.form-control {
-  width: 200px;
-  margin-right: 10px;
-  /* רווח בין ה-input לבין הכפתור */
-}
-
-.btn {
-  padding: 6px 12px;
-  /* גודל מתאים לכפתור */
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 9999;
-  /* עדיפות מעל כל האלמנטים */
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  width: auto;
-  min-width: 200px;
-  padding: 0.5rem 0;
-}
-
-/* אפקט ריחוף לפריטים */
-.dropdown-menu .dropdown-item:hover {
-  /* background-color: #f8f9fa; */
-  /* רקע בהיר בעת ריחוף */
-  color: #007bff;
-  /* טקסט כחול */
+/* שינוי סגנון כשהמשתמש עומד על תיבת החיפוש */
+.mr-sm-2:focus {
+  border-color: #b27409;
+  /* צבע גבול כשהחיפוש פעיל */
+  background-color: #ffffff;
+  /* רקע לבן */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* הצללה */
 }

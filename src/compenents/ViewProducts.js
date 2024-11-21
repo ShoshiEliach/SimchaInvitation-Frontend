@@ -47,10 +47,11 @@ const ViewProducts = () => {
 
   return (
     <>
-      <h1>האירוע: {eventType}</h1> {/* הצגת eventType */}
-      <AppHeaderBar/>
-     <ProductSelector eventType={eventType} />
       <TabFilter></TabFilter>
+      <h1>Invitation: {eventType}</h1> {/* הצגת eventType */}
+      <ProductSelector eventType={eventType} />
+
+
       {/* <Products products={filteredProducts} /> */}
     </>
   );

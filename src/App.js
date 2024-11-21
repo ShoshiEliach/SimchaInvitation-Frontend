@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MainLayout from './compenents/MainLayout';
 import ViewProducts from './compenents/ViewProducts';
 import Products from './compenents/Products';
 import Search from './compenents/Search';
 import Sidebar from './compenents/Sidebar';
+import ProductEditor from './compenents/ProductEditor';
+import InvitationReady from './compenents/InvitationReady';
+import AppHeaderBar from './compenents/AppHeaderBar';
+import { useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
+
   const [visibleSidebar, setVisibleSidebar] = useState(false);
 
   const handleOver = () => setVisibleSidebar(true);
@@ -19,7 +25,11 @@ function App() {
     // שאר המוצרים...
   ];
 
+
+
+
   return (
+
     <Routes>
       <Route
         path="/"
@@ -36,8 +46,10 @@ function App() {
           element={
             <>
               {visibleSidebar && <Sidebar handleOut={handleOut} />}
-
               <Search />
+              <nav>
+                <Link to='InvitationReady'>Invitation Ready</Link>
+              </nav>
               <Products products={products} />
             </>
           }
@@ -45,6 +57,8 @@ function App() {
 
         {/* דף ViewProducts */}
         <Route path="ViewProducts" element={<ViewProducts />} />
+        <Route path='ProductEditor' element={<ProductEditor />} />
+        <Route path='InvitationReady' element={<InvitationReady />} />
       </Route>
     </Routes>
   );

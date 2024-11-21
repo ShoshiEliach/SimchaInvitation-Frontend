@@ -1,46 +1,66 @@
+.tabs-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* מוודא שהטאבים יעמדו בצד שמאל */
+  align-items: flex-start;
+  /* מקם את הטאבים בצד השמאלי של הדף */
+  height: 100vh;
+  /* גורם לטאבים להתפשט לאורך כל גובה הדף */
+  position: fixed;
+  /* מקבע את הטאבים בצד שמאל גם כאשר גוללים */
+  margin-top: 0;
+  left: 0;
+}
+
 .tabs {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    border-bottom: 2px solid #e0e0e0;
-  }
-  
-  .tab-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    color: #6c757d;
-    padding: 20px; /* הגדלת הרווח מסביב */
-    transition: color 0.3s ease;
-    width: 100px; /* יצירת ריבועים */
-    height: 120px; /* יצירת ריבועים */
-    border: 2px solid transparent; /* הוספת גבול שקוף */
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .tab-item.active {
-    color: #2c2d2d; /* צבע טאב פעיל */
-    font-weight: bold;
-    border: 2px solid #49326b; /* גבול כחול פעיל */
-    background-color: #f8f9fa; /* רקע בהיר */
-  }
-  
-  .tab-item:hover {
-    color: #422271; /* צבע בהובר */
-    background-color: #b27409; /* רקע כהה יותר בהובר */
-  }
-  
-  .tab-icon-img {
-    width: 40px; /* גודל האייקון */
-    height: 40px; /* גודל האייקון */
-    margin-bottom: 5px; /* רווח בין האייקון לטקסט */
-  }
-  
-  .tab-content {
-    padding: 20px;
-    font-size: 16px;
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  /* משנה את כיוון הטאבים להיות לאורך */
+  align-items: flex-start;
+  /* מוודא שהטאבים יתחילו ממצב של צד שמאל */
+  padding: 20px;
+  border-right: 2px solid #e0e0e0;
+  /* גבול בצד ימין של הטאבים */
+  background-color: #f8f9fa;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 15px;
+  width: 150px;
+  /* גודל קבוע לטאבים */
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.tab-item.active {
+  color: #2c2d2d;
+  font-weight: bold;
+  border-left: 2px solid #49326b;
+  /* גבול שמדגיש את הטאב הפעיל */
+  background-color: #f0f0f0;
+}
+
+.tab-item:hover {
+  color: #422271;
+  border: 2px solid #49326b;
+  border-radius: 10px;
+  ;
+}
+
+.tab-icon-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  /* רווח בין האייקון לטקסט */
+}
+
+.tab-content {
+  padding: 20px;
+  font-size: 16px;
+  text-align: center;
+}

@@ -1,0 +1,114 @@
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.product-image {
+    width: 50%;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-details {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* מרכז אנכית */
+    align-items: center;
+    /* מרכז אופקית */
+    text-align: center;
+    /* טקסט מיושר למרכז */
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+    align-items: center;
+}
+
+.div-delivery {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    /* מרכז אנכית */
+    align-items: center;
+    /* מרכז אופקית */
+    text-align: center;
+}
+
+.div-delivery>span {
+    color: green;
+}
+
+.delivery-button {
+    width: 150px;
+    white-space: normal;
+    text-align: center;
+    padding: 10px;
+    height: auto;
+    white-space: normal;
+    display: inline-block;
+}
+
+
+
+.delivery-button:hover {
+    color: #49326b !important;
+    /* צבע טקסט ברירת מחדל */
+    border-color: #49326b !important;
+    /* צבע גבול ברירת מחדל */
+
+}
+
+.packages {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+
+}
+
+.package h4 {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.package-button {
+    background-color: #49326b;
+    height: auto;
+    white-space: normal;
+    text-align: center;
+    padding: 10px;
+    width: 33%;
+    justify-content: space-between;
+
+}
+
+.package-button:hover {
+    background-color: #614e7d !important;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-to-cart {
+    padding: 10px;
+    background-color: #49326b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

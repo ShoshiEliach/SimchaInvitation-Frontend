@@ -1,5 +1,9 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Navbar as BootstrapNavbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import { Link } from 'react-router-dom';
 import './AppHeaderBar.css';
 
@@ -44,11 +48,10 @@ function AppHeaderBar() {
 
   return (
     <BootstrapNavbar expand="lg" bg="light" variant="light">
-      <BootstrapNavbar.Brand href="#">Navbar</BootstrapNavbar.Brand>
       <BootstrapNavbar.Toggle aria-controls="navbarNav" />
       <BootstrapNavbar.Collapse id="navbarNav">
-        <Nav className="ml-auto">
-          <NavDropdown title="Baby" id="navbarDropdown">
+        <Nav className="ml-auto" >
+          <NavDropdown title="Baby" id="navbarDropdown" aligh="start" flip={false}>
             {dropdownItemsBaby.map((item, index) => (
               <React.Fragment key={index}>
                 <NavDropdown.Item href={item.href} className='dropdown-item'>
@@ -98,19 +101,17 @@ function AppHeaderBar() {
           </NavDropdown>
 
           <Nav.Item>
-            <Link className="nav-link disabled" to="#">Sheva-Brachot</Link>
+            <Link className="nav-link" to="/link">Sheva-brachot</Link>
           </Nav.Item>
         </Nav>
         <Form className="form-inline my-2 my-lg-0">
           <FormControl
             type="search"
             placeholder="Search"
-            className="mr-sm-2"
+            className="mr-sm-2 custom-clear-color"
             aria-label="Search"
           />
-          <Button variant="outline-success" type="submit">
-            Search
-          </Button>
+
         </Form>
       </BootstrapNavbar.Collapse>
     </BootstrapNavbar>
