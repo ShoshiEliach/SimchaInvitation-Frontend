@@ -1,68 +1,85 @@
+.google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.buttonOpen{
-    top: 100px;
-    right: 100px;
-    position: fixed;
-  background-color: #b27409;
-  width:80px;
-  height: 30px;
-  margin:30px; 
+
 }
 
-.form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1000;  
-  }
-  
-  .form-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    cursor: pointer;
-  }
-  
-  /* עיצוב טופס */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  form input {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form button {
-    padding: 10px;
-    font-size: 1em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #45a049;
-  }
-  
+
+
+.wraper {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.forgot-remember {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+
+}
+
+.link-forgot {
+  color: #b27409;
+}
+
+.remember:checked {
+  background-color: #b27409;
+  border: 2px solid rgba(73, 50, 107, 0.5);
+  box-shadow: 0 4px 6px rgba(73, 50, 107, 1);
+
+
+}
+
+.remember:hover {
+  outline: 2px solid rgba(73, 50, 107, 0.5);
+
+}
+
+.remember:not(:checked) {
+  outline: 2px solid rgba(73, 50, 107, 0.5);
+
+}
+
+.remember {
+  border: 2px solid #2c2d2d;
+
+}
+
+.remember:focus {
+  outline: 2px solid rgba(73, 50, 107, 0.5);
+
+
+}
+
+
+
+.sign-in {
+  min-width: 30%;
+  margin: auto;
+  background-color: #49326b;
+  border: #2c2d2d solid 2px;
+}
+
+.sign-in:hover {
+  background-color: #564969;
+  border: #2c2d2d solid 2px;
+
+
+}
+
+.link-register {
+  color: #b27409;
+}

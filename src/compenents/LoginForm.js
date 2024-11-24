@@ -1,41 +1,53 @@
-import React, { useState } from 'react';
-import  './LoginForm.css';
-const LoginForm = () => {
-  const [isOpen, setIsOpen] = useState(false);  
+import React from 'react';
+import {
+  MDBContainer,
+  MDBInput,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon
+}
 
-  const openForm = () => {
-    setIsOpen(true);
-  };
+  from 'mdb-react-ui-kit';
+import './LoginForm.css'
+import { Link } from 'react-router-dom'
 
-  const closeForm = () => {
-    setIsOpen(false);
-  };
-
+function LoginForm() {
   return (
-    <div>
-      <button onClick={openForm} className='buttonOpen'>Sign up / Log in</button>
+    <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+      <div className='wraper'>
+        <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email' />
+        <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' />
+      </div>
 
-      {isOpen && (
-        <div className="form">
-          <div className="form-content">
-            <span className="close" onClick={closeForm}>&times;</span>
-            <h2>Sign up / Log in</h2>
-            <form>
-              <div>
-                <label htmlFor="email">e-mail</label>
-                <input type="email" id="email" placeholder="הכנס אימייל" required />
-              </div>
-              <div>
-                <label htmlFor="password">password</label>
-                <input type="password" id="password" placeholder="הכנס סיסמה" required />
-              </div>
-              <button type="submit">submit</button>
-            </form>
-          </div>
+      <div className="forgot-remember d-flex justify-content-between mx-3 mb-4">
+        <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' className='remember' />
+        <Link to="/forgotPassword" className='link-forgot'>Forgot password?</Link>
+      </div>
+
+      <MDBBtn className="sign-in mb-4">Sign in</MDBBtn>
+
+      <div className="text-center">
+        <p>Not a member?<Link to='/Register' className='link-register'>Register</Link> </p>
+
+
+
+
+        <div className='google'>
+          <MDBBtn
+            color="primary"
+            className="d-flex align-items-center justify-content-center"
+            style={{ backgroundColor: '#49326b', color: 'white', fontWeight: 'bold', fontWeight: 'normal  ' }}
+          >
+            <MDBIcon fab icon="google" className="me-2" />
+            Sign up with Google
+          </MDBBtn>
+
+
         </div>
-      )}
-    </div>
+      </div>
+
+    </MDBContainer >
   );
-};
+}
 
 export default LoginForm;

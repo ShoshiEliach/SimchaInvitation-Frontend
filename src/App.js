@@ -9,6 +9,10 @@ import ProductEditor from './compenents/ProductEditor';
 import InvitationReady from './compenents/InvitationReady';
 import AppHeaderBar from './compenents/AppHeaderBar';
 import { useLocation } from 'react-router-dom';
+import UploadFile from './compenents/UploadFile';
+import EnterManually from './compenents/EnterManually';
+import VoiceRecorder from './compenents/VoiceRecorder';
+import LoginForm from './compenents/LoginForm';
 
 function App() {
   const location = useLocation();
@@ -59,6 +63,11 @@ function App() {
         <Route path="ViewProducts" element={<ViewProducts />} />
         <Route path='ProductEditor' element={<ProductEditor />} />
         <Route path='InvitationReady' element={<InvitationReady />} />
+        <Route path='UploadFile' element={<UploadFile />} />
+        <Route path='EnterManually' element={<EnterManually />} />
+        <Route path='VoiceRecorder' element={<VoiceRecorder />} />
+        <Route path='LoginForm' element={<LoginForm />} />
+
       </Route>
     </Routes>
   );

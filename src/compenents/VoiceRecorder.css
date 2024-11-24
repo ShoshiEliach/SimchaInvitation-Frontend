@@ -1,0 +1,53 @@
+.voice-recorder-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.record-button,
+.stop-button {
+    background-color: #b27409;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stop-button {
+    background-color: #ff4d4d;
+}
+
+.record-button:hover {
+    background-color: goldenrod
+}
+
+.stop-button:hover {
+    background-color: #e60000;
+}
+
+.audio-container {
+    margin-top: 20px;
+}
+
+.download-link {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}

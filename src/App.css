@@ -1,6 +1,7 @@
 body {
   background-color: #ededee;
 }
+
 .content {
   display: flex;
   justify-content: center;
@@ -13,4 +14,3 @@ body {
   flex-wrap: wrap;
   gap: 20px;
 }
-

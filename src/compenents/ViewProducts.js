@@ -7,15 +7,16 @@ import TabFilter from './tabFilter';
 import AppHeaderBar from './AppHeaderBar';
 
 const ViewProducts = () => {
-  const location = useLocation(); // שליפת ה-location
-  const [eventType, setEventType] = useState(''); // הגדרת state לעדכון הערך
-
+  const location = useLocation();
+  const [eventType, setEventType] = useState('');
+  console.log(location.state);
   useEffect(() => {
     // אם יש state שמגיע, אנחנו מעדכנים את ה-state של eventType
     if (location.state && location.state.eventType) {
       setEventType(location.state.eventType);
+      console.log(eventType);
     } else {
-      setEventType(''); // אם אין eventType ב-state, נוודא שלא יהיה ריק
+      setEventType(' '); // אם אין eventType ב-state, נוודא שלא יהיה ריק
     }
   }, [location.state]); // עדכון אם ה-state משתנה
 
@@ -48,7 +49,7 @@ const ViewProducts = () => {
   return (
     <>
       <TabFilter></TabFilter>
-      <h1>Invitation: {eventType}</h1> {/* הצגת eventType */}
+      <h1>{eventType} Invitation: </h1> {/* הצגת eventType */}
       <ProductSelector eventType={eventType} />
 
 

@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    margin: 20px auto;
+    color: #49326b;
+    font-weight: normal;
+}
+
+span {
+    margin: auto;
+    color: #b27409;
+    text-align: center;
+}
+
+.div-upload {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    border: #49326b solid 3px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+}

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Navbar as BootstrapNavbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import PersonIcon from '@mui/icons-material/Person';
 import { Link } from 'react-router-dom';
 import './AppHeaderBar.css';
 
@@ -103,6 +103,14 @@ function AppHeaderBar() {
           <Nav.Item>
             <Link className="nav-link" to="/link">Sheva-brachot</Link>
           </Nav.Item>
+          <Nav.Item>
+            <Link to='/LoginForm' className='profile-button'>
+              <Button variant="link" className="nav-link">
+                <PersonIcon />login/sighup
+              </Button>
+            </Link>
+          </Nav.Item>
+
         </Nav>
         <Form className="form-inline my-2 my-lg-0">
           <FormControl

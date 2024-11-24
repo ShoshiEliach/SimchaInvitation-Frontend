@@ -3,6 +3,7 @@ import "./InvitationReady.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Dropdown, Menu } from 'antd';
 import { Color } from "fabric";
+import { Link } from "react-router-dom";
 
 const InvitationReady = () => {
 
@@ -10,17 +11,32 @@ const InvitationReady = () => {
     const menu = (
         <Menu>
             <Menu.Item key="1">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-                    Upload a file                </a>
+                <Link to='/UploadFile'>
+                    Upload a file
+                </Link>
             </Menu.Item>
             <Menu.Item key="2">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+                <Link to='/EnterManually'>
                     Enter manauly
-                </a>
-            </Menu.Item>
+                </Link>            </Menu.Item>
 
         </Menu>
     );
+
+    const menuVoice = (
+        <Menu>
+            <Menu.Item key="1">
+                <Link to='/UploadFile'>
+                    Upload a file
+                </Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+                <Link to='/VoiceRecorder'>
+                    Record yourself
+                </Link>
+            </Menu.Item>
+        </Menu>
+    )
 
     return (
         <div className="product-container">
@@ -43,8 +59,10 @@ const InvitationReady = () => {
 
                     <div className="div-delivery">
                         <Dropdown overlay={menu} placement="bottomCenter" arrow>
+
                             <Button className="delivery-button">Email Delivery <span style={{ color: 'green' }}>0.1$ for recipient</span>
                             </Button>
+
                         </Dropdown>
                     </div>
                     <div>
@@ -55,7 +73,7 @@ const InvitationReady = () => {
                         </Dropdown>
                     </div>
                     <div>
-                        <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                        <Dropdown overlay={menuVoice} placement="bottomCenter" arrow>
                             <Button className="delivery-button">Phone Voice Delivery <span style={{ color: 'green' }}>0.1$ for recipient</span>
 
                             </Button>
