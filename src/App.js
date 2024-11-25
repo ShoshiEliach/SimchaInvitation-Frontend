@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MainLayout from './compenents/MainLayout';
 import ViewProducts from './compenents/ViewProducts';
@@ -13,8 +14,14 @@ import UploadFile from './compenents/UploadFile';
 import EnterManually from './compenents/EnterManually';
 import VoiceRecorder from './compenents/VoiceRecorder';
 import LoginForm from './compenents/LoginForm';
-
+import RegisterForm from './compenents/RegisterForm';
 function App() {
+  const [message, setMessage] = useState('');
+  useEffect(() => {
+    fetch('http://localhost:5000/')
+      .then(response => response.text())
+      .then(data => setMessage(data));
+  }, []);
   const location = useLocation();
 
   const [visibleSidebar, setVisibleSidebar] = useState(false);
@@ -67,6 +74,7 @@ function App() {
         <Route path='EnterManually' element={<EnterManually />} />
         <Route path='VoiceRecorder' element={<VoiceRecorder />} />
         <Route path='LoginForm' element={<LoginForm />} />
+        <Route path='Register' element={<RegisterForm />} />
 
       </Route>
     </Routes>
