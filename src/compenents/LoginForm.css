@@ -6,6 +6,46 @@
 
 }
 
+.signIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.custom-container {
+  position: relative;
+  top: 18vh;
+
+}
+
+.button-container {
+  margin-left: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.button-custom {
+  display: flex;
+  /* width: 50%; */
+  background-color: #49326b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.3s;
+  text-align: center;
+  /* margin: 10%; */
+}
+
+.button-custom:hover {
+  background-color: #2f1f46;
+}
 
 
 .wraper {
@@ -16,6 +56,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+
 
 }
 
@@ -44,23 +85,34 @@
 }
 
 .remember:hover {
-  outline: 2px solid rgba(73, 50, 107, 0.5);
-
+  outline: none;
+  box-shadow: none;
+  box-shadow: none;
 }
 
 .remember:not(:checked) {
-  outline: 2px solid rgba(73, 50, 107, 0.5);
-
+  border: 2px solid #49326b;
+  /* הגדרת גבול כחול כהה */
+  background-color: transparent;
+  /* צבע רקע שקוף */
+  outline: none;
 }
 
-.remember {
-  border: 2px solid #2c2d2d;
-
+.remember:checked {
+  background-color: #b27409;
+  /* צבע רקע חום כתום */
+  border: 2px solid #49326b;
+  /* גבול כחול כהה */
+  box-shadow: 0 4px 6px rgba(73, 50, 107, 0.5);
+  /* צל */
 }
+
+
 
 .remember:focus {
-  outline: 2px solid rgba(73, 50, 107, 0.5);
-
+  outline: none;
+  box-shadow: none;
+  box-shadow: none;
 
 }
 
@@ -82,4 +134,18 @@
 
 .link-register {
   color: #b27409;
+}
+
+
+
+.input-custom:focus {
+  box-shadow: 0 0 7px #49326b;
+  border-color: #49326b;
+}
+
+.input-custom {
+  border-radius: 5px;
+  /* דוגמה לשדרוג */
+  border: 2px solid #49326b;
+
 }

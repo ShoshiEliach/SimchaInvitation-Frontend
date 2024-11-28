@@ -24,7 +24,7 @@ const TabFilter = () => {
             alt="Video"
             className="tab-icon-img"
           />
-          <span>Video</span>
+          {/* <span>Video</span> */}
         </div>
         <div
           className={`tab-item ${activeTab === 'invitation' ? 'active' : ''}`}
@@ -35,7 +35,7 @@ const TabFilter = () => {
             alt="Invitation"
             className="tab-icon-img"
           />
-          <span>Invitation</span>
+          {/* <span>Invitation</span> */}
         </div>
         <div
           className={`tab-item ${activeTab === 'poster' ? 'active' : ''}`}
@@ -46,7 +46,7 @@ const TabFilter = () => {
             alt="Poster"
             className="tab-icon-img"
           />
-          <span>Poster</span>
+          {/* <span>Poster</span> */}
         </div>
 
       </div>

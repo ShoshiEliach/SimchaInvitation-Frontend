@@ -11,6 +11,8 @@ import {
 } from 'mdb-react-ui-kit';
 import './RegisterForm.css';
 import { useFormik } from 'formik';
+import { Style } from '@mui/icons-material';
+import { transform } from 'framer-motion';
 
 const validate = (values) => {
     const errors = {};
@@ -89,33 +91,37 @@ function RegisterForm() {
                     <form onSubmit={handleSubmit} noValidate>
                         <div className="input-group">
                             <MDBIcon fas icon="user me-3" size='lg' />
-                            <MDBInput label='First Name' name='firstName' id='form1' type='text' className='w-100' onChange={formik.handleChange} value={formik.values.firstName} required />
+                            <MDBInput label='First Name' name='firstName' id='form1' type='text' className='w-100 input-custom' onChange={formik.handleChange} value={formik.values.firstName} required />
                         </div>
 
                         <div className='input-group'>
-                            <MDBIcon fas icon="user-circle me-3" size='lg' />
-                            <MDBInput label='Last Name' name='lastName' id='form1' type='text' className='w-100' onChange={formik.handleChange} value={formik.values.lastName} required />
+                            <MDBIcon fas icon="user-circle me-3" size='lg' style={{ color: '#49326b' }} />
+                            <MDBInput label='Last Name' name='lastName' id='form1' type='text' className='w-100 input-custom' onChange={formik.handleChange} value={formik.values.lastName} required />
                         </div>
 
                         <div className="input-group">
                             <MDBIcon fas icon="envelope me-3" size='lg' />
-                            <MDBInput label='E-mail' name='email' id='form2' type='email' onChange={formik.handleChange} value={formik.values.email} required />
+                            <MDBInput label='E-mail' name='email' id='form2' type='email' className='input-custom' onChange={formik.handleChange} value={formik.values.email} required />
                         </div>
 
                         <div className="input-group">
                             <MDBIcon fas icon="phone-square-alt me-3" size='lg' />
-                            <MDBInput label='Phone' name='phone' id='form2' type='tel' onChange={formik.handleChange} value={formik.values.phone} required />
+                            <MDBInput label='Phone' name='phone' id='form2' type='tel' className='input-custom' onChange={formik.handleChange} value={formik.values.phone} required />
                         </div>
 
                         <div className="input-group">
                             <MDBIcon fas icon="lock me-3" size='lg' />
-                            <MDBInput label='Password' name='password' id='form3' type='password' onChange={formik.handleChange} value={formik.values.password} required />
+                            <MDBInput label='Password' name='password' id='form3' type='password' className='input-custom' onChange={formik.handleChange} value={formik.values.password} required />
+                        </div>
+                        <div className='button-container '>
+                            <button className='button-register'>Register</button>
                         </div>
 
-                        <MDBBtn className='register-btn' size='lg' type='submit'>Register</MDBBtn>
                     </form>
                 </MDBCardBody>
+
             </MDBCard>
+
         </MDBContainer>
     );
 }

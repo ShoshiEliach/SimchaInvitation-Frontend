@@ -1,0 +1,22 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    /* מיקום הקומפוננטות אנכית */
+    min-height: 100vh;
+    /* מבטיח שהפריסה תשתרע על כל המסך */
+}
+
+.header {
+    flex-shrink: 0;
+    /* מבטיח שהגובה של ה-Header לא יתכווץ */
+}
+
+.app-header-bar {
+    flex-shrink: 0;
+    /* מבטיח ש-AppHeaderBar לא יתכווץ */
+}
+
+.outlet {
+    flex-grow: 1;
+    /* מבטיח שהתוכן הדינמי יתפוס את כל השטח הזמין */
+}

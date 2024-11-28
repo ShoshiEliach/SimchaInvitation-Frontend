@@ -47,7 +47,7 @@ const ViewProducts = () => {
   return (
     <>
       <TabFilter></TabFilter>
-      <h1>{eventType} Invitation: </h1> {/* הצגת eventType */}
+      <h1 className='h1-class'>{eventType} Invitation: </h1> {/* הצגת eventType */}
 
 
       {/* <Products products={filteredProducts} /> */}

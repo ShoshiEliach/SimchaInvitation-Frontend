@@ -5,6 +5,7 @@ import { Button, Dropdown, Menu } from 'antd';
 import { Color } from "fabric";
 import { Link } from "react-router-dom";
 
+
 const InvitationReady = () => {
 
 
@@ -39,17 +40,20 @@ const InvitationReady = () => {
     )
 
     return (
-        <div className="product-container">
-            {/* צד שמאל: תצוגת מוצר */}
-            <div className="product-image">
-                <h2>Your Invitation</h2>
+        <>
+            <div className="product-container">
+                {/* צד שמאל: תצוגת מוצר */}
+                <div className="product-image">
+                    <h2>Your Invitation</h2>
 
-                <img src="/path-to-product-image.jpg" alt="Product" />
-                <p>Price: <b>$10.00</b></p>
+                    <img src="/invitation-example.png" alt="Product" />
+                    <p>Price: <b>$10.00</b></p>
+                </div>
+
+
+
+
             </div>
-
-
-
             <div className="product-details">
 
 
@@ -60,26 +64,26 @@ const InvitationReady = () => {
                     <div className="div-delivery">
                         <Dropdown overlay={menu} placement="bottomCenter" arrow>
 
-                            <Button className="delivery-button">Email Delivery <span style={{ color: 'green' }}>0.1$ for recipient</span>
+                            <Button className="delivery-button">Email Delivery <span style={{ color: '#49326b' }}>0.1$ for recipient</span>
                             </Button>
 
                         </Dropdown>
                     </div>
                     <div>
                         <Dropdown overlay={menu} placement="bottomCenter" arrow>
-                            <Button className="delivery-button">SMS Delivery <span style={{ color: 'green' }}>0.1$ for recipient</span>
+                            <Button className="delivery-button">SMS Delivery <span style={{ color: '#49326b' }}>0.1$ for recipient</span>
 
                             </Button>
                         </Dropdown>
                     </div>
                     <div>
                         <Dropdown overlay={menuVoice} placement="bottomCenter" arrow>
-                            <Button className="delivery-button">Phone Voice Delivery <span style={{ color: 'green' }}>0.1$ for recipient</span>
+                            <Button className="delivery-button">Phone Voice Delivery <span style={{ color: '#49326b' }}>0.1$ for recipient</span>
 
                             </Button>
                         </Dropdown>
                     </div>
-                    <Button className="delivery-button">Print <span style={{ color: 'green' }}>0.1$ for recipient</span>
+                    <Button className="delivery-button">Print <span style={{ color: '#49326b' }}>0.1$ for recipient</span>
 
                     </Button>
                 </div>
@@ -93,10 +97,11 @@ const InvitationReady = () => {
                     <Button type="primary" className="package-button">100 emails + 70 SMS for $10</Button>
                 </div>
 
-                {/* כפתור */}
-                <button className="add-to-cart">Next</button>
             </div>
-        </div>
+            <div className="button-next">
+                <Button type="primary" style={{ backgroundColor: '#2c2d2d', width: '25vh', color: '#49326b', height: '7vh', fontSize: '26px' }}>Next </Button>
+            </div>
+        </>
     );
 };
 

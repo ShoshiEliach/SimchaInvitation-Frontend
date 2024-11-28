@@ -1,22 +1,30 @@
 .navbar {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 5px 20px;
   background-color: #b39869 !important;
-  position: relative;
+  position: fixed;
   overflow: visible;
-  /* מאפשר לתפריט להופיע מחוץ ל-navbar */
   z-index: 1;
   direction: ltr;
-
+  width: 100%;
+  margin-top: 0;
+  top: 10vh;
 }
 
 .navbar-nav {
+
   display: flex;
   align-items: center;
-  margin-left: 380px;
+  justify-content: center;
+  margin: 0 20px 0 280px;
+  gap: 20px;
 }
 
 .navbar-nav .nav-link {
-  margin-right: 40px;
+  /* margin-right: 40px; */
   color: #333;
   font-size: 16px;
   text-decoration: none;
@@ -76,15 +84,32 @@
   background-color: #f4f4f4;
   /* צבע רקע */
   color: #333;
-  /* צבע טקסט */
+  margin-left: 20px;
 }
 
 /* שינוי סגנון כשהמשתמש עומד על תיבת החיפוש */
 .mr-sm-2:focus {
-  border-color: #b27409;
+  border-color: #b27409 !important;
   /* צבע גבול כשהחיפוש פעיל */
   background-color: #ffffff;
   /* רקע לבן */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   /* הצללה */
+}
+
+.mr-sm-2::-webkit-search-cancel-button {
+  filter: invert(0%) brightness(0%);
+}
+
+
+
+
+
+
+.form-inline {
+  align-items: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
 }

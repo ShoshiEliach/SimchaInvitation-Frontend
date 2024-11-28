@@ -14,6 +14,7 @@ export default function MainLayout({ handleOver, handleClick }) {
       {/* הצגת AppHeaderBar רק אם הנתיב אינו דף הבית */}
       {location.pathname !== '/' && <AppHeaderBar />}
 
+
       <Outlet /> {/* כאן יוחלף התוכן הדינמי לפי הנתיב */}
     </>
   );

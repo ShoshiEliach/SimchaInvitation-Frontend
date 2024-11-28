@@ -50,7 +50,9 @@ function AppHeaderBar() {
     <BootstrapNavbar expand="lg" bg="light" variant="light">
       <BootstrapNavbar.Toggle aria-controls="navbarNav" />
       <BootstrapNavbar.Collapse id="navbarNav">
+
         <Nav className="ml-auto" >
+
           <NavDropdown title="Baby" id="navbarDropdown" aligh="start" flip={false}>
             {dropdownItemsBaby.map((item, index) => (
               <React.Fragment key={index}>
@@ -111,7 +113,10 @@ function AppHeaderBar() {
             </Link>
           </Nav.Item>
 
+
+
         </Nav>
+
         <Form className="form-inline my-2 my-lg-0">
           <FormControl
             type="search"
@@ -121,7 +126,9 @@ function AppHeaderBar() {
           />
 
         </Form>
+
       </BootstrapNavbar.Collapse>
+
     </BootstrapNavbar>
   );
 }
