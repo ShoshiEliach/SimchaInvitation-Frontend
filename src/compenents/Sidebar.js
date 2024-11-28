@@ -46,7 +46,7 @@ const Sidebar = ({ handleOut }) => {
         <li className="highlight-text"><Link to="/ViewProducts" state={{ eventType: 'Video' }} className='kind-link'>Video</Link></li>
         <li className="highlight-text"><Link to="/ViewProducts" state={{ eventType: 'ShevaBrachot' }} className='kind-link'>Voice</Link></li>
       </ul>
-      <a href="#" className="arrow-btn">→</a>
+      <Link to='/ViewProducts' className="arrow-btn"><p>All →</p></Link>
       <Outlet />
     </div>
   );

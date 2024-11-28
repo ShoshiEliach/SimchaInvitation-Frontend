@@ -40,44 +40,47 @@ function App() {
 
 
   return (
-
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <MainLayout
-            handleOver={handleOver}
-            handleClick={handleClick}
-          />
-        }
-      >
-        {/* דף הבית: "/" */}
+    <div className='app-containe'>
+      <Routes>
         <Route
-          index
+          path="/"
           element={
-            <>
-              {visibleSidebar && <Sidebar handleOut={handleOut} />}
-              <Search />
-              <nav>
-                <Link to='InvitationReady'>Invitation Ready</Link>
-              </nav>
-              <Products products={products} />
-            </>
+            <MainLayout
+              handleOver={handleOver}
+              handleClick={handleClick}
+            />
+
+
           }
-        />
+        >
+          {/* דף הבית: "/" */}
+          <Route
+            index
+            element={
+              <>
+                {visibleSidebar && <Sidebar handleOut={handleOut} />}
+                <Search />
+                <nav>
+                  <Link to='InvitationReady'>Invitation Ready</Link>
+                </nav>
+                <Products products={products} />
+              </>
+            }
+          />
 
-        {/* דף ViewProducts */}
-        <Route path="ViewProducts" element={<ViewProducts />} />
-        <Route path='ProductEditor' element={<ProductEditor />} />
-        <Route path='InvitationReady' element={<InvitationReady />} />
-        <Route path='UploadFile' element={<UploadFile />} />
-        <Route path='EnterManually' element={<EnterManually />} />
-        <Route path='VoiceRecorder' element={<VoiceRecorder />} />
-        <Route path='LoginForm' element={<LoginForm />} />
-        <Route path='Register' element={<RegisterForm />} />
+          {/* דף ViewProducts */}
+          <Route path="ViewProducts" element={<ViewProducts />} />
+          <Route path='ProductEditor' element={<ProductEditor />} />
+          <Route path='InvitationReady' element={<InvitationReady />} />
+          <Route path='UploadFile' element={<UploadFile />} />
+          <Route path='EnterManually' element={<EnterManually />} />
+          <Route path='VoiceRecorder' element={<VoiceRecorder />} />
+          <Route path='LoginForm' element={<LoginForm />} />
+          <Route path='Register' element={<RegisterForm />} />
 
-      </Route>
-    </Routes>
+        </Route>
+      </Routes>
+    </div>
   );
 }
 

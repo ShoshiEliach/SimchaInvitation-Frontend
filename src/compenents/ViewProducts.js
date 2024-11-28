@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // יש לוודא שיבוא נכון
 import './ViewProducts.css';
 import Products from './Products';
-import ProductSelector from './ProductSelector';
 import TabFilter from './tabFilter';
 import AppHeaderBar from './AppHeaderBar';
 
@@ -16,10 +15,9 @@ const ViewProducts = () => {
       setEventType(location.state.eventType);
       console.log(eventType);
     } else {
-      setEventType(' '); // אם אין eventType ב-state, נוודא שלא יהיה ריק
+      setEventType(' ');
     }
-  }, [location.state]); // עדכון אם ה-state משתנה
-
+  }, [location.state]);
   const [selectedGroup1, setSelectedGroup1] = useState('');
   const [selectedGroup2, setSelectedGroup2] = useState('');
 
@@ -50,7 +48,6 @@ const ViewProducts = () => {
     <>
       <TabFilter></TabFilter>
       <h1>{eventType} Invitation: </h1> {/* הצגת eventType */}
-      <ProductSelector eventType={eventType} />
 
 
       {/* <Products products={filteredProducts} /> */}

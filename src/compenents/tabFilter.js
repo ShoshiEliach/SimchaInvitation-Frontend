@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './TabFilter.css';
+import { useNavigate } from 'react-router-dom';
 
 const TabFilter = () => {
   const [activeTab, setActiveTab] = useState('video'); // מצב התחלתי של טאב
+  const navigate = useNavigate();
 
   const handleTabClick = (tab) => {
-    setActiveTab(tab); // עדכון מצב הטאב הפעיל
+    setActiveTab(tab);
+    navigate('/ViewProducts', { state: { eventType: tab } });
+
   };
 
   return (

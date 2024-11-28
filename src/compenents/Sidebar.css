@@ -17,7 +17,7 @@
   /* יישור טקסט לשמאל */
   background-color: #49326b;
   /* צבע רקע */
-  color: #ffffff;
+  color: #C0C0C0;
   /* צבע טקסט */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -49,19 +49,21 @@ li.expandable-item>ul>li {
 .arrow-btn {
   margin-top: auto;
   margin-bottom: 65%;
-  display: block;
+  display: flex;
   width: 120px;
   height: 50px;
-  border: 5px solid #b27409;
+  border: 3px solid #b27409;
   border-radius: 30px;
   color: #b27409;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 1.7em;
+  text-decoration: none;
+  padding: auto;
+  font-weight: normal;
+  justify-content: center;
 }
 
-a {
-  text-decoration: none;
-}
+
 
 .custom-link {
   text-decoration: none;

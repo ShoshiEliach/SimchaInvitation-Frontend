@@ -9,19 +9,19 @@ import './AppHeaderBar.css';
 
 function AppHeaderBar() {
   const dropdownItemsBaby = [
-    { label: 'ShulemZucher', href: '#' },
-    { label: 'Vachtnacht', href: '#' },
-    { label: 'Bris', href: '#' },
-    { label: 'PidyonHaben', href: '#' },
-    { label: 'Kidush', href: '#' },
+    { label: 'ShulemZucher', to: '/ViewProducts', state: { eventType: 'ShulemZucher' } },
+    { label: 'Vachtnacht', to: '/ViewProducts', state: { eventType: 'Vachtnacht' } },
+    { label: 'Bris', to: '/ViewProducts', state: { eventType: 'Bris' } },
+    { label: 'PidyonHaben', to: '/ViewProducts', state: { eventType: 'PidyonHaben' } },
+    { label: 'Kidush', to: '/ViewProducts', state: { eventType: 'Kidush' } },
 
   ];
 
 
 
   const dropdownItemsBarMitzva = [
-    { label: 'Bas-Mitzva', href: '#' },
-    { label: 'Kidush', href: '#' },
+    { label: 'Bas-Mitzva', to: '/ViewProducts', state: { eventType: 'Bar-Mitzva' } },
+    { label: 'Kidush', to: '/ViewProducts', state: { eventType: 'Kidush' } },
 
 
   ];
@@ -29,17 +29,17 @@ function AppHeaderBar() {
 
 
   const dropdownItemsThenoim = [
-    { label: 'Kallah-side', href: '#' },
-    { label: 'Chussen-side', href: '#' },
-    { label: 'Both sides', href: '#' },
+    { label: 'Kallah-side', to: '/ViewProducts', state: { eventType: 'Kallah-side' } },
+    { label: 'Chussen-side', to: '/ViewProducts', state: { eventType: 'Chussen-side' } },
+    { label: 'Both sides', to: '/ViewProducts', state: { eventType: 'Both sides' } },
 
   ];
 
 
   const dropdownItemsWedding = [
-    { label: 'Wedding Invitation', href: '#' },
-    { label: 'Save the date', href: '#' },
-    { label: 'Bavarfen', href: '#' },
+    { label: 'Wedding Invitation', to: '/ViewProducts', state: { eventType: 'Wedding' } },
+    { label: 'Save the date', to: '/ViewProducts', state: { eventType: 'Save the date' } },
+    { label: 'Bavarfen', to: '/ViewProducts', state: { eventType: 'Bavarfen' } },
 
 
   ];
@@ -54,7 +54,7 @@ function AppHeaderBar() {
           <NavDropdown title="Baby" id="navbarDropdown" aligh="start" flip={false}>
             {dropdownItemsBaby.map((item, index) => (
               <React.Fragment key={index}>
-                <NavDropdown.Item href={item.href} className='dropdown-item'>
+                <NavDropdown.Item as={Link} to={item.to} state={item.state} className='dropdown-item'>
                   {item.label}
                 </NavDropdown.Item>
                 {index < dropdownItemsBaby.length - 1 && <NavDropdown.Divider />}
@@ -63,14 +63,14 @@ function AppHeaderBar() {
           </NavDropdown>
 
           <Nav.Item>
-            <Link className="nav-link" to="/link">Upsherin</Link>
+            <Link className="nav-link" to="/ViewProducts" state={{ eventType: 'Upsherin' }}>Upsherin</Link>
           </Nav.Item>
 
 
           <NavDropdown title="Bar-Mitzva" id="navbarDropdown">
             {dropdownItemsBarMitzva.map((item, index) => (
               <React.Fragment key={index}>
-                <NavDropdown.Item href={item.href} className='dropdown-item'>
+                <NavDropdown.Item as={Link} to={item.to} state={item.state} className='dropdown-item'>
                   {item.label}
                 </NavDropdown.Item>
                 {index < dropdownItemsBaby.length - 1 && <NavDropdown.Divider />}
@@ -81,7 +81,7 @@ function AppHeaderBar() {
           <NavDropdown title="Thenoim" id="navbarDropdown">
             {dropdownItemsThenoim.map((item, index) => (
               <React.Fragment key={index}>
-                <NavDropdown.Item href={item.href} className='dropdown-item'>
+                <NavDropdown.Item as={Link} to={item.to} state={item.state} className='dropdown-item'>
                   {item.label}
                 </NavDropdown.Item>
                 {index < dropdownItemsBaby.length - 1 && <NavDropdown.Divider />}
@@ -92,7 +92,7 @@ function AppHeaderBar() {
           <NavDropdown title="Wedding" id="navbarDropdown">
             {dropdownItemsWedding.map((item, index) => (
               <React.Fragment key={index}>
-                <NavDropdown.Item href={item.href} className='dropdown-item'>
+                <NavDropdown.Item as={Link} to={item.to} state={item.state} className='dropdown-item'>
                   {item.label}
                 </NavDropdown.Item>
                 {index < dropdownItemsBaby.length - 1 && <NavDropdown.Divider />}
@@ -101,7 +101,7 @@ function AppHeaderBar() {
           </NavDropdown>
 
           <Nav.Item>
-            <Link className="nav-link" to="/link">Sheva-brachot</Link>
+            <Link className="nav-link" to="/ViewProducts" state={{ eventType: 'Sheva-brachot' }}>Sheva-brachot</Link>
           </Nav.Item>
           <Nav.Item>
             <Link to='/LoginForm' className='profile-button'>
