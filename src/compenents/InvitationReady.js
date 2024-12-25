@@ -9,15 +9,30 @@ import { Link } from "react-router-dom";
 const InvitationReady = () => {
 
 
-    const menu = (
+    const menuEmail = (
         <Menu>
             <Menu.Item key="1">
-                <Link to='/UploadFile'>
+                <Link to={{ pathname: '/UploadFile', state: { valueType: "email" } }}>
+                    Upload a file(Email)
+                </Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+                <Link to={{ pathname: '/EnterManually', state: { valueType: "email" } }}>
+                    Enter manauly
+                </Link>            </Menu.Item>
+
+        </Menu>
+    );
+
+    const menuSms = (
+        <Menu>
+            <Menu.Item key="1">
+                <Link to={{ pathname: '/UploadFile', state: { valueType: "phone" } }}>
                     Upload a file
                 </Link>
             </Menu.Item>
             <Menu.Item key="2">
-                <Link to='/EnterManually'>
+                <Link to={{ pathname: '/EnterManually', state: { valueType: "phone", } }}>
                     Enter manauly
                 </Link>            </Menu.Item>
 
@@ -27,7 +42,7 @@ const InvitationReady = () => {
     const menuVoice = (
         <Menu>
             <Menu.Item key="1">
-                <Link to='/UploadFile'>
+                <Link to={{ pathname: '/UploadFile', state: { valueType: "phone" } }}>
                     Upload a file
                 </Link>
             </Menu.Item>
@@ -62,7 +77,7 @@ const InvitationReady = () => {
                     <h4>Delivery Options:</h4>
 
                     <div className="div-delivery">
-                        <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                        <Dropdown overlay={menuEmail} placement="bottomCenter" arrow>
 
                             <Button className="delivery-button">Email Delivery <span style={{ color: '#49326b' }}>0.1$ for recipient</span>
                             </Button>
@@ -70,7 +85,7 @@ const InvitationReady = () => {
                         </Dropdown>
                     </div>
                     <div>
-                        <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                        <Dropdown overlay={menuSms} placement="bottomCenter" arrow>
                             <Button className="delivery-button">SMS Delivery <span style={{ color: '#49326b' }}>0.1$ for recipient</span>
 
                             </Button>

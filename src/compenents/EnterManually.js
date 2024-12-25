@@ -1,37 +1,77 @@
 import React, { useState } from "react";
 import "./EnterManually.css"; // Import the CSS file
-
+import { useLocation } from "react-router-dom";
 const EnterManually = () => {
-    const [phoneNumbers, setPhoneNumbers] = useState(["0559998888"]);
+
+    const location = useLocation();
+    const valueType = location.state;
+    const [recipients, setRecipients] = useState([""]);
 
     // Add a new empty phone number field
     const handleAdd = () => {
-        setPhoneNumbers([...phoneNumbers, ""]);
+        const allValid = recipients.every(validateValue);
+        if (allValid) {
+            setRecipients([...recipients, ""]);
+        } else {
+            alert(`Some ${valueType === "email" ? "emails" : "phone numbers"} are invalid.`);
+        }
     };
 
     // Update a specific phone number
     const handleInputChange = (index, value) => {
-        const updatedNumbers = [...phoneNumbers];
+        const updatedNumbers = [...recipients];
         updatedNumbers[index] = value;
-        setPhoneNumbers(updatedNumbers);
+        setRecipients(updatedNumbers);
     };
 
     // Remove a specific phone number
     const handleRemove = (index) => {
-        const updatedNumbers = phoneNumbers.filter((_, i) => i !== index);
-        setPhoneNumbers(updatedNumbers);
+        const updatedNumbers = recipients.filter((_, i) => i !== index);
+        setRecipients(updatedNumbers);
+    };
+
+    //check validate value:
+
+    const validateValue = (value) => {
+        if (valueType === "email") {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        } else if (valueType === "phone") {
+            return /^\d{9,10}$/.test(value);
+        }
+        return false;
     };
 
     // Save button handler
-    const handleSave = () => {
-        console.log("Saved numbers:", phoneNumbers);
-        alert("Phone numbers saved: " + phoneNumbers.join(", "));
-    };
+    const handleSave = async () => {
+        const allValid = recipients.every(validateValue);
+        if (allValid) {
+            try {
+                const response = await fetch("http://localhost:5000/api/phone-numbers", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ recipients }),
+                });
+
+                if (response.ok) {
+                    alert("Phone numbers saved successfully!");
+                } else {
+                    alert("Failed to save phone numbers.");
+                }
+            } catch (error) {
+                console.error("Error saving phone numbers:", error);
+                alert("An error occurred while saving phone numbers.");
+            }
+        };
+    }
+
+
 
     return (
         <div className="enter-manually-container">
             <div>
-                {phoneNumbers.map((phone, index) => (
+                {recipients.map((phone, index) => (
                     <div key={index} className="phone-input-wrapper">
                         <input
                             type="text"
